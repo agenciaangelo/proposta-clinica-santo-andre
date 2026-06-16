@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta — Gestão de Marketing | Agência Ângelo × Clínica de Olhos Santo André</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --lj: #E8601A; --lj2: #F07A35; --lj3: #C44D0E;
+    --dark: #0A0C10; --dark2: #111318; --dark3: #181B22; --dark4: #1F222A;
+    --light: #F4F5F7; --suave: #5E6270;
+    --tw: rgba(255,255,255,0.9); --ts: rgba(255,255,255,0.42);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Barlow', sans-serif; background: var(--dark); color: white; font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,12,16,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 56px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; color: white; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; }
+  .nav-logo span { color: var(--lj); }
+  .nav-links { display: flex; gap: 20px; list-style: none; }
+  .nav-links a { font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.32); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--lj); }
+
+  .hero { min-height: 100vh; display: flex; align-items: flex-end; padding: 120px 56px 80px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,58,110,0.12) 0%, transparent 50%), linear-gradient(315deg, rgba(232,96,26,0.08) 0%, transparent 50%); }
+  .hero::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 40px 40px; }
+  .hero-inner { max-width: 1000px; width: 100%; position: relative; z-index: 2; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 10px; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--lj); margin-bottom: 24px; opacity: 0; animation: up 0.7s 0.1s forwards; }
+  .hero-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--lj); }
+  .hero-h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(52px, 9vw, 108px); font-weight: 900; line-height: 0.88; color: white; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 28px; opacity: 0; animation: up 0.7s 0.25s forwards; }
+  .hero-h1 .acc { color: var(--lj2); }
+  .hero-h1 .dim { color: rgba(255,255,255,0.25); }
+  .hero-sub { font-size: 16px; font-weight: 300; color: var(--ts); max-width: 520px; line-height: 1.85; margin-bottom: 56px; opacity: 0; animation: up 0.7s 0.4s forwards; }
+  .hero-meta { display: flex; gap: 0; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 30px; flex-wrap: wrap; opacity: 0; animation: up 0.7s 0.55s forwards; }
+  .hm { padding-right: 32px; margin-right: 32px; border-right: 1px solid rgba(255,255,255,0.08); }
+  .hm:last-child { border-right: none; margin-right: 0; }
+  .hm label { display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.22); margin-bottom: 4px; font-family: 'Barlow Condensed', sans-serif; }
+  .hm span { font-size: 14px; color: var(--tw); font-weight: 400; }
+  @keyframes up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  .sec { padding: 88px 56px; }
+  .sec-inner { max-width: 1000px; margin: 0 auto; }
+  .sec-mid { background: var(--dark2); }
+  .sec-dark3 { background: var(--dark3); }
+
+  .sh { display: flex; align-items: center; gap: 14px; margin-bottom: 44px; }
+  .sh-n { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lj); background: rgba(232,96,26,0.1); border: 1px solid rgba(232,96,26,0.25); padding: 4px 10px; border-radius: 3px; flex-shrink: 0; }
+  .sh-t { font-family: 'Barlow Condensed', sans-serif; font-size: 38px; font-weight: 800; color: white; line-height: 1; text-transform: uppercase; letter-spacing: 0.02em; }
+
+  /* AGÊNCIA */
+  .agencia-box { background: var(--dark4); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 36px; position: relative; overflow: hidden; }
+  .agencia-box::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, #C44D0E, #F07A35); }
+  .agencia-nums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+  .agencia-num { background: var(--dark); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; text-align: center; }
+  .agencia-num span { font-family: 'Barlow Condensed', sans-serif; font-size: 36px; font-weight: 900; color: var(--lj); display: block; line-height: 1; }
+  .agencia-num p { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 4px; }
+
+  /* CICLO */
+  .ciclo-wrap { display: grid; grid-template-columns: 380px 1fr; gap: 56px; align-items: center; }
+  .ciclo-svg { width: 100%; display: block; overflow: visible; }
+  .ciclo-desc { display: flex; flex-direction: column; gap: 28px; }
+  .ciclo-item { display: flex; gap: 18px; align-items: flex-start; }
+  .ciclo-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+  .ciclo-dot.plan { background: rgba(232,96,26,0.12); border: 2px solid #E8601A; color: #E8601A; }
+  .ciclo-dot.exec { background: rgba(240,122,53,0.12); border: 2px solid #F07A35; color: #F07A35; }
+  .ciclo-dot.mon  { background: rgba(196,77,14,0.12); border: 2px solid #C44D0E; color: #C44D0E; }
+  .ciclo-item h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; }
+  .ciclo-item p { font-size: 13.5px; color: var(--ts); line-height: 1.7; font-weight: 300; }
+
+  /* FLUXO */
+  .fluxo { display: flex; flex-direction: column; position: relative; }
+  .fluxo::before { content: ''; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 1px; background: rgba(232,96,26,0.2); }
+  .fluxo-row { display: grid; grid-template-columns: 40px 1fr; gap: 24px; padding-bottom: 28px; }
+  .fluxo-dot { width: 40px; height: 40px; border-radius: 50%; background: var(--dark3); border: 2px solid rgba(232,96,26,0.4); color: var(--lj); display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; flex-shrink: 0; position: relative; z-index: 1; }
+  .fluxo-body { padding-top: 8px; }
+  .fluxo-h { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; }
+  .fluxo-p { font-size: 13.5px; color: var(--ts); line-height: 1.7; max-width: 600px; font-weight: 300; }
+
+  /* PORTAL */
+  .portal-grid { display: grid; grid-template-columns: 1fr 1.6fr 1.8fr; gap: 16px; margin-top: 36px; }
+  .portal-card { background: var(--dark4); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; }
+  .portal-img { width: 100%; display: block; }
+  .portal-info { padding: 16px 18px; }
+  .portal-info h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .portal-info p { font-size: 12px; color: var(--ts); line-height: 1.6; font-weight: 300; }
+
+  /* PORTFÓLIO */
+  .port-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .port-card { background: var(--dark4); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; overflow: hidden; transition: transform 0.2s; }
+  .port-card:hover { transform: translateY(-3px); }
+  .port-img { width: 100%; display: block; height: 260px; object-fit: cover; object-position: top; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .port-info { padding: 18px 20px; }
+  .port-info h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .port-info p { font-size: 12.5px; color: var(--ts); line-height: 1.6; margin-bottom: 10px; font-weight: 300; }
+  .port-link { display: inline-flex; align-items: center; gap: 5px; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lj2); text-decoration: none; border-bottom: 1px solid rgba(232,96,26,0.3); padding-bottom: 2px; }
+
+  .port-lp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+  .port-lp { background: rgba(232,96,26,0.06); border: 1px solid rgba(232,96,26,0.14); border-radius: 10px; padding: 20px 22px; }
+  .port-lp label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lj); margin-bottom: 6px; }
+  .port-lp h4 { font-size: 14px; font-weight: 500; color: white; margin-bottom: 8px; }
+  .port-lp a { font-size: 12px; color: var(--ts); text-decoration: none; word-break: break-all; }
+
+  /* LOGOS */
+  .logos-wrap { background: #F4F5F7; border-radius: 12px; padding: 28px; margin-top: 36px; }
+  .logos-label { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--suave); margin-bottom: 16px; text-align: center; }
+  .logos-img { width: 100%; height: auto; border-radius: 6px; display: block; }
+
+  /* PLATAFORMAS */
+  .plat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px; }
+  .plat-card { background: var(--dark3); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 26px 24px; display: flex; gap: 16px; align-items: flex-start; }
+  .plat-icon { font-size: 28px; flex-shrink: 0; }
+  .plat-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+  .plat-card p { font-size: 13px; color: var(--ts); line-height: 1.65; font-weight: 300; }
+
+  /* PLANOS */
+  .planos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .plano { background: var(--dark3); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 32px 26px; position: relative; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+  .plano:hover { transform: translateY(-3px); }
+  .plano::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.06); }
+  .plano.rec::before { background: linear-gradient(90deg, #C44D0E, #F07A35); }
+  .plano-badge { display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lj); background: rgba(232,96,26,0.1); border: 1px solid rgba(232,96,26,0.25); padding: 3px 10px; border-radius: 20px; margin-bottom: 14px; align-self: flex-start; }
+  .plano-nome { font-family: 'Barlow Condensed', sans-serif; font-size: 21px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.03em; line-height: 1.1; margin-bottom: 6px; }
+  .plano-sub { font-size: 12px; color: var(--ts); line-height: 1.55; margin-bottom: 24px; font-weight: 300; }
+  .plano-valor { font-family: 'Barlow Condensed', sans-serif; font-size: 54px; font-weight: 900; color: white; line-height: 1; margin-bottom: 28px; letter-spacing: -0.02em; }
+  .plano-valor sup { font-size: 20px; vertical-align: super; color: var(--lj); margin-right: 3px; font-weight: 600; }
+  .plano-ul { list-style: none; display: flex; flex-direction: column; gap: 9px; flex: 1; margin-bottom: 24px; }
+  .plano-ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; color: rgba(255,255,255,0.52); line-height: 1.5; font-weight: 300; }
+  .plano-ul li::before { content: '✓'; color: var(--lj); font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+  .plano-ul li.no { color: rgba(255,255,255,0.2); }
+  .plano-ul li.no::before { content: '—'; color: rgba(255,255,255,0.15); }
+  .plano-cta { display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(232,96,26,0.1); border: 1px solid rgba(232,96,26,0.28); color: #F07A35; font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 13px 20px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
+  .plano-cta:hover { background: rgba(232,96,26,0.2); border-color: rgba(232,96,26,0.5); }
+
+  /* TRÁFEGO ADD-ON */
+  .trafego-box { background: rgba(232,96,26,0.06); border: 1px solid rgba(232,96,26,0.18); border-radius: 12px; padding: 28px 32px; margin-top: 24px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+  .trafego-box h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+  .trafego-box p { font-size: 13.5px; color: var(--ts); line-height: 1.7; font-weight: 300; max-width: 580px; }
+  .trafego-price { font-family: 'Barlow Condensed', sans-serif; font-size: 42px; font-weight: 900; color: var(--lj); line-height: 1; white-space: nowrap; text-align: right; }
+  .trafego-price span { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; color: rgba(255,255,255,0.3); margin-top: 4px; }
+
+  /* NOTA CONVERSA */
+  .nota-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 16px 20px; margin-top: 24px; font-size: 13.5px; color: rgba(255,255,255,0.45); line-height: 1.7; }
+  .nota-box strong { color: rgba(255,255,255,0.65); }
+
+  /* CALENDÁRIO */
+  .cal-intro { font-size: 13.5px; color: rgba(255,255,255,0.4); font-style: italic; line-height: 1.7; margin-bottom: 36px; padding: 14px 18px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; }
+  .cal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .cal-card { background: var(--dark3); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 24px 22px; position: relative; overflow: hidden; }
+  .cal-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .cal-card:nth-child(1)::before { background: #E8601A; }
+  .cal-card:nth-child(2)::before { background: #F07A35; }
+  .cal-card:nth-child(3)::before { background: #C44D0E; }
+  .cal-card:nth-child(4)::before { background: #E8601A; }
+  .cal-card:nth-child(5)::before { background: #F07A35; }
+  .cal-card:nth-child(6)::before { background: #C44D0E; }
+  .cal-mes { font-family: 'Barlow Condensed', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--lj); margin-bottom: 6px; }
+  .cal-titulo { font-family: 'Barlow Condensed', sans-serif; font-size: 18px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 12px; line-height: 1.1; }
+  .cal-ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .cal-ul li { display: flex; align-items: flex-start; gap: 8px; font-size: 12.5px; color: rgba(255,255,255,0.5); line-height: 1.5; font-weight: 300; }
+  .cal-ul li::before { content: '›'; color: var(--lj); font-weight: 700; flex-shrink: 0; }
+
+  /* CTA */
+  .cta-sec { padding: 96px 56px; position: relative; overflow: hidden; }
+  .cta-sec::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(232,96,26,0.05) 1px, transparent 1px); background-size: 40px 40px; }
+  .cta-sec::after { content: ''; position: absolute; bottom: -150px; right: -80px; width: 700px; height: 600px; background: radial-gradient(ellipse, rgba(232,96,26,0.12) 0%, transparent 60%); pointer-events: none; }
+  .cta-inner { max-width: 1000px; margin: 0 auto; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+  .cta-h { font-family: 'Barlow Condensed', sans-serif; font-size: 50px; font-weight: 900; color: white; line-height: 0.95; text-transform: uppercase; margin-bottom: 16px; }
+  .cta-h em { font-style: normal; color: #F07A35; }
+  .cta-p { font-size: 15px; font-weight: 300; color: var(--ts); line-height: 1.8; max-width: 480px; }
+  .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--lj); color: white; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 16px 28px; border-radius: 6px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s, transform 0.2s; }
+  .cta-btn:hover { background: #F07A35; transform: translateY(-2px); }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 32px 56px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .ft-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; }
+  .ft-logo span { color: var(--lj); }
+  .ft-info { font-size: 12px; color: rgba(255,255,255,0.24); text-align: right; line-height: 1.9; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; } .nav-links { display: none; }
+    .hero, .sec, .cta-sec { padding: 80px 24px 60px; } .hero { padding-top: 100px; }
+    .planos-grid, .port-grid, .ciclo-wrap, .port-lp-grid, .portal-grid, .plat-grid, .cal-grid, .agencia-nums { grid-template-columns: 1fr; }
+    .cta-inner, .trafego-box { grid-template-columns: 1fr; gap: 20px; }
+    .hero-meta { gap: 20px; } .hm { border-right: none; margin-right: 0; padding-right: 0; }
+    footer { padding: 28px 24px; } .ft-info { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo"><span>Agência</span> Ângelo</a>
+  <ul class="nav-links">
+    <li><a href="#agencia">A Agência</a></li>
+    <li><a href="#ciclo">Ciclo</a></li>
+    <li><a href="#fluxo">Fluxo</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#planos">Planos</a></li>
+    <li><a href="#calendario">Calendário</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Proposta de Serviço · Saúde</div>
+    <h1 class="hero-h1">GESTÃO DE<br><span class="acc">MARKETING</span><br><span class="dim">COMPLETO</span></h1>
+    <p class="hero-sub">Planejamento, execução e monitoramento de marketing digital e offline para a Clínica de Olhos Santo André — unidade Tirol, Natal/RN. Desde 1977 atendendo gerações com excelência em oftalmologia.</p>
+    <div class="hero-meta">
+      <div class="hm"><label>Preparado para</label><span>Clínica de Olhos Santo André</span></div>
+      <div class="hm"><label>Unidade</label><span>Tirol — Natal/RN</span></div>
+      <div class="hm"><label>Preparado por</label><span>Adson Ângelo</span></div>
+      <div class="hm"><label>Data</label><span>Junho de 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- APRESENTAÇÃO DA AGÊNCIA -->
+<section id="agencia" class="sec sec-mid">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">01</span><h2 class="sh-t">Agência Ângelo</h2></div>
+    <div class="agencia-box">
+      <p style="font-size:15.5px;font-weight:300;color:rgba(255,255,255,0.62);line-height:1.9;margin-bottom:16px;">A <strong style="color:white;font-weight:500;">Agência Ângelo</strong> é uma agência de marketing focada em aumentar resultados de profissionais e empresas por meio de estratégias integradas — unindo planejamento, conteúdo, comunicação digital e ações offline. Com quase 5 anos de atuação, já atendemos clientes dos mais variados segmentos, com especial experiência na área da saúde.</p>
+      <p style="font-size:15.5px;font-weight:300;color:rgba(255,255,255,0.62);line-height:1.9;margin-bottom:16px;">A agência é liderada por <strong style="color:white;font-weight:500;">Adson Ângelo</strong>, graduado em Gestão de Marketing e com <strong style="color:white;font-weight:500;">MBA em Comunicação e Marketing pela USP/ECA</strong>. Nossa atuação na área da saúde é pautada pela conformidade com a <strong style="color:white;font-weight:500;">Resolução CFM 2.336/2023</strong>, garantindo que toda a comunicação seja profissional, ética e eficaz.</p>
+      <p style="font-size:15.5px;font-weight:300;color:rgba(255,255,255,0.62);line-height:1.9;">Acreditamos que um bom trabalho de marketing não cria dependência dos gestores para o repasse de demandas. Nosso papel é <strong style="color:white;font-weight:500;">analisar continuamente as necessidades da clínica, criar e executar as ações de marketing necessárias</strong> — de forma proativa e estratégica, com total visibilidade pelo portal do cliente.</p>
+      <div class="agencia-nums">
+        <div class="agencia-num"><span>5</span><p>anos de atuação no mercado</p></div>
+        <div class="agencia-num"><span>30+</span><p>clientes atendidos</p></div>
+        <div class="agencia-num"><span>CFM</span><p>conformidade com Res. 2.336/2023</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CICLO OPERACIONAL -->
+<section id="ciclo" class="sec">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">02</span><h2 class="sh-t">Ciclo Operacional</h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:640px;line-height:1.85;margin-bottom:48px;">Todo o trabalho é estruturado em torno de um ciclo contínuo — planejamento, execução e monitoramento — garantindo que as ações estejam sempre alinhadas aos objetivos da clínica e os resultados sejam medidos e aprimorados a cada ciclo.</p>
+    <div class="ciclo-wrap">
+      <div>
+        <svg class="ciclo-svg" viewBox="-40 -40 480 480" xmlns="http://www.w3.org/2000/svg">
+          <!-- Círculos de fundo -->
+          <circle cx="200" cy="200" r="178" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+          <!-- Arco PLANEJAMENTO: topo (200,22) → execução (354,289), horário -->
+          <path d="M 200,22 A 178,178 0 0,1 354,289" fill="none" stroke="#E8601A" stroke-width="9" stroke-linecap="round"/>
+          <!-- Arco EXECUÇÃO: (354,289) → monitoramento (46,289), horário -->
+          <path d="M 354,289 A 178,178 0 0,1 46,289" fill="none" stroke="#F07A35" stroke-width="9" stroke-linecap="round"/>
+          <!-- Arco MONITORAMENTO: (46,289) → topo (200,22), horário -->
+          <path d="M 46,289 A 178,178 0 0,1 200,22" fill="none" stroke="#C44D0E" stroke-width="9" stroke-linecap="round"/>
+
+          <!-- Círculo central -->
+          <circle cx="200" cy="200" r="82" fill="rgba(232,96,26,0.06)" stroke="rgba(232,96,26,0.16)" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="68" fill="rgba(10,12,16,0.85)"/>
+          <text x="200" y="193" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="rgba(255,255,255,0.35)">CICLO</text>
+          <text x="200" y="210" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="12" font-weight="700" letter-spacing="4" fill="rgba(255,255,255,0.35)">OPERACIONAL</text>
+
+          <!-- Nó PLANEJAMENTO (topo) -->
+          <circle cx="200" cy="22" r="36" fill="#0A0C10" stroke="#E8601A" stroke-width="2.5"/>
+          <text x="200" y="17" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="10" font-weight="800" letter-spacing="2" fill="#E8601A">PLANEJAMENTO</text>
+
+          <!-- Nó EXECUÇÃO (dir-baixo) -->
+          <circle cx="354" cy="289" r="36" fill="#0A0C10" stroke="#F07A35" stroke-width="2.5"/>
+          <text x="354" y="284" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="10" font-weight="800" letter-spacing="2" fill="#F07A35">EXECUÇÃO</text>
+
+          <!-- Nó MONITORAMENTO (esq-baixo) -->
+          <circle cx="46" cy="289" r="36" fill="#0A0C10" stroke="#C44D0E" stroke-width="2.5"/>
+          <text x="46" y="284" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="9" font-weight="800" letter-spacing="1.5" fill="#C44D0E">MONITORAMENTO</text>
+        </svg>
+      </div>
+
+      <div class="ciclo-desc">
+        <div class="ciclo-item">
+          <div class="ciclo-dot plan">01</div>
+          <div>
+            <h4>Planejamento</h4>
+            <p>Reunião trimestral de alinhamento estratégico — ou sob demanda quando necessário — para definir objetivos, revisar resultados e estabelecer prioridades. Produzimos um planejamento mínimo de 3 meses integrando marketing digital e offline.</p>
+          </div>
+        </div>
+        <div class="ciclo-item">
+          <div class="ciclo-dot exec">02</div>
+          <div>
+            <h4>Execução</h4>
+            <p>Colocamos o plano em prática: produção de conteúdo, artes, vídeos, campanhas e ações offline — sem limite de publicações, desde que tudo esteja previsto no planejamento para viabilizar a execução com nossa equipe.</p>
+          </div>
+        </div>
+        <div class="ciclo-item">
+          <div class="ciclo-dot mon">03</div>
+          <div>
+            <h4>Monitoramento</h4>
+            <p>Análise dos indicadores ao fim de cada ciclo — alcance, engajamento, conversões — gerando dados reais que alimentam o próximo planejamento e melhoram continuamente os resultados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLUXO DE PRODUÇÃO -->
+<section id="fluxo" class="sec sec-mid">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">03</span><h2 class="sh-t">Fluxo de produção</h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:640px;line-height:1.85;margin-bottom:44px;">Cada material passa por um processo estruturado — do briefing à veiculação — com total transparência e rastreabilidade no portal do cliente.</p>
+
+    <div class="fluxo">
+      <div class="fluxo-row">
+        <div class="fluxo-dot">01</div>
+        <div class="fluxo-body">
+          <h3 class="fluxo-h">Reunião trimestral de objetivos</h3>
+          <p class="fluxo-p">A cada trimestre — ou sob demanda — realizamos alinhamento para definir objetivos, revisar resultados e estabelecer as prioridades do próximo período. Analisamos proativamente as necessidades da clínica para criar e executar as demandas de marketing sem depender do repasse dos gestores.</p>
+        </div>
+      </div>
+      <div class="fluxo-row">
+        <div class="fluxo-dot">02</div>
+        <div class="fluxo-body">
+          <h3 class="fluxo-h">Planejamento integrado de 3 meses</h3>
+          <p class="fluxo-p">Produzimos um planejamento com pelo menos 3 meses de visão, com plano de ação semanal detalhado — integrando marketing digital (Instagram e Google) e offline em uma estratégia coesa, com temas, campanhas e datas definidas com antecedência.</p>
+        </div>
+      </div>
+      <div class="fluxo-row">
+        <div class="fluxo-dot">03</div>
+        <div class="fluxo-body">
+          <h3 class="fluxo-h">Equipe de redação</h3>
+          <p class="fluxo-p">Com o planejamento aprovado, os materiais são enviados para a equipe de redação, que desenvolve os textos, roteiros e legendas — sempre dentro das normas da Resolução CFM 2.336/2023.</p>
+        </div>
+      </div>
+      <div class="fluxo-row">
+        <div class="fluxo-dot">04</div>
+        <div class="fluxo-body">
+          <h3 class="fluxo-h">Design e edição de vídeo</h3>
+          <p class="fluxo-p">Os textos seguem para a equipe de design (artes e peças gráficas) ou de edição de vídeo — com visitas quinzenais à clínica para gravação de conteúdo com equipamento profissional.</p>
+        </div>
+      </div>
+      <div class="fluxo-row">
+        <div class="fluxo-dot">05</div>
+        <div class="fluxo-body">
+          <h3 class="fluxo-h">Avaliação interna</h3>
+          <p class="fluxo-p">Antes de qualquer envio ao cliente, realizamos uma avaliação interna de qualidade — verificando conformidade, identidade visual e alinhamento com os objetivos definidos no planejamento.</p>
+        </div>
+      </div>
+      <div class="fluxo-row">
+        <div class="fluxo-dot">06</div>
+        <div class="fluxo-body">
+          <h3 class="fluxo-h">Aprovação via WhatsApp</h3>
+          <p class="fluxo-p">Os materiais aprovados internamente são enviados pelo WhatsApp para aprovação da clínica — com agilidade e praticidade. O processo de produção pode ser acompanhado em tempo real pelo portal do cliente.</p>
+        </div>
+      </div>
+      <div class="fluxo-row" style="padding-bottom:0">
+        <div class="fluxo-dot">07</div>
+        <div class="fluxo-body">
+          <h3 class="fluxo-h">Agendamento e veiculação</h3>
+          <p class="fluxo-p">Após aprovação da clínica, o conteúdo é agendado para publicação nas datas planejadas ou veiculado nas campanhas pagas — garantindo que tudo seja executado no momento estrategicamente mais adequado.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portal do cliente -->
+    <div style="margin-top:52px;">
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px;">Portal exclusivo para acompanhamento em tempo real</p>
+      <div class="portal-grid">
+        <div class="portal-card">
+          <img src="data:image/jpeg;base64,IMG_LOGIN" alt="Portal — Login" class="portal-img">
+          <div class="portal-info"><h4>Login do Portal</h4><p>Acesso exclusivo por usuário e senha.</p></div>
+        </div>
+        <div class="portal-card">
+          <img src="data:image/jpeg;base64,IMG_DASH" alt="Portal — Visão Geral" class="portal-img">
+          <div class="portal-info"><h4>Visão Geral</h4><p>Demandas, indicadores, campanhas e score de colaboração.</p></div>
+        </div>
+        <div class="portal-card">
+          <img src="data:image/jpeg;base64,IMG_DEMANDAS" alt="Portal — Demandas" class="portal-img">
+          <div class="portal-info"><h4>Kanban de Demandas</h4><p>Acompanhe cada material por etapa: briefing, em produção, aguardando aprovação e concluído.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFÓLIO MÉDICO -->
+<section id="portfolio" class="sec">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">04</span><h2 class="sh-t">Clientes na área médica</h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:640px;line-height:1.85;margin-bottom:40px;">Profissionais e clínicas da área da saúde atendidos pela Agência Ângelo — com produção de conteúdo que respeita as normas do CFM e comunica com qualidade e humanização.</p>
+    <div class="port-grid">
+      <div class="port-card">
+        <img src="data:image/jpeg;base64,IMG_MONICA" class="port-img" alt="Dra. Monica Monttán">
+        <div class="port-info"><h4>Dra. Monica Monttán</h4><p>Cirurgiã Vascular · Gestão de conteúdo e landing page médica.</p><a href="https://www.instagram.com/dramonicamontan/" target="_blank" class="port-link">▶ Ver Instagram</a></div>
+      </div>
+      <div class="port-card">
+        <img src="data:image/jpeg;base64,IMG_LAGRACIA" class="port-img" alt="Clínica La Gracia">
+        <div class="port-info"><h4>Clínica La Gracia</h4><p>Clínica médica multidisciplinar · Gestão completa de redes sociais e identidade.</p><a href="https://www.instagram.com/lagraciaclinica/" target="_blank" class="port-link">▶ Ver Instagram</a></div>
+      </div>
+      <div class="port-card">
+        <img src="data:image/jpeg;base64,IMG_MATOGRANDE" class="port-img" alt="Clínica Mato Grande">
+        <div class="port-info"><h4>Clínica Mato Grande</h4><p>Clínica médica · Produção de conteúdo, vídeos e artes para redes sociais.</p><a href="https://www.instagram.com/clinicamatogrande/" target="_blank" class="port-link">▶ Ver Instagram</a></div>
+      </div>
+      <div class="port-card">
+        <img src="data:image/jpeg;base64,IMG_LAISA" class="port-img" alt="Dra. Laísa Roteli">
+        <div class="port-info"><h4>Dra. Laísa Roteli</h4><p>Ginecologista e Obstetra · Presença digital com linguagem clínica e humanizada.</p><a href="https://www.instagram.com/dralaisaroteli/" target="_blank" class="port-link">▶ Ver Instagram</a></div>
+      </div>
+      <div class="port-card" style="grid-column:1/-1;max-width:480px;">
+        <img src="data:image/jpeg;base64,IMG_ALVARO" class="port-img" style="height:200px;" alt="Dr. Álvaro Faria">
+        <div class="port-info"><h4>Dr. Álvaro Faria</h4><p>Cirurgião Geral e do Aparelho Digestivo · Conteúdo educativo e gestão de redes sociais.</p><a href="https://www.instagram.com/dralvarofaria/" target="_blank" class="port-link">▶ Ver Instagram</a></div>
+      </div>
+    </div>
+    <div class="port-lp-grid">
+      <div class="port-lp"><label>Landing Page Médica</label><h4>Dra. Monica Monttán</h4><a href="https://dramonicamonttan.com.br/" target="_blank">dramonicamonttan.com.br ↗</a></div>
+      <div class="port-lp"><label>Landing Page Médica</label><h4>Dr. Álvaro Faria</h4><a href="https://agenciaangelo.github.io/dralvaro/" target="_blank">agenciaangelo.github.io/dralvaro ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES GERAIS -->
+<section class="sec sec-dark3">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">05</span><h2 class="sh-t">Quem já confia na agência</h2></div>
+    <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:640px;line-height:1.85;margin-bottom:32px;">Empresas e profissionais de diferentes segmentos que têm a Agência Ângelo como parceira de marketing.</p>
+    <div class="logos-wrap">
+      <p class="logos-label">Clientes Agência Ângelo</p>
+      <img src="data:image/jpeg;base64,IMG_LOGOS" alt="Clientes Agência Ângelo" class="logos-img">
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos" class="sec sec-mid">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">06</span><h2 class="sh-t">Planos e investimento</h2></div>
+
+    <!-- Plataformas -->
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px;">Plataformas trabalhadas</p>
+    <div class="plat-grid" style="margin-bottom:44px;">
+      <div class="plat-card">
+        <div class="plat-icon">📸</div>
+        <div>
+          <h4>Instagram</h4>
+          <p>Feed, Reels, Stories e campanhas pagas — conteúdo orgânico e pago para crescimento de audiência e geração de consultas.</p>
+        </div>
+      </div>
+      <div class="plat-card">
+        <div class="plat-icon">🔍</div>
+        <div>
+          <h4>Google</h4>
+          <p>Google Ads e presença orgânica — campanhas de busca para captura de pacientes que buscam ativamente por serviços oftalmológicos em Natal.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="planos-grid">
+      <div class="plano rec">
+        <div class="plano-badge">★ Marketing 360°</div>
+        <div class="plano-nome">Planejamento + Execução + Monitoramento</div>
+        <div class="plano-sub">Gestão completa — do estratégico ao operacional, digital e offline.</div>
+        <div class="plano-valor"><sup>R$</sup>2.000</div>
+        <ul class="plano-ul">
+          <li>Planejamento estratégico trimestral</li>
+          <li>Plano de ação semanal detalhado</li>
+          <li>Produção de conteúdo sem limite de publicações (conforme planejamento)</li>
+          <li>Visitas quinzenais para gravação de conteúdo</li>
+          <li>Campanhas digitais e ações offline</li>
+          <li>Aprovações via WhatsApp</li>
+          <li>Portal do cliente para acompanhamento</li>
+          <li>Análise de métricas e relatórios</li>
+          <li>Conformidade CFM em todo o conteúdo</li>
+        </ul>
+        <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Tenho+interesse+no+plano+Marketing+360%C2%B0+para+a+Cl%C3%ADnica+Santo+Andr%C3%A9." target="_blank" class="plano-cta">💬 Quero o Marketing 360°</a>
+      </div>
+      <div class="plano">
+        <div class="plano-badge">Marketing 180° — Conteúdo</div>
+        <div class="plano-nome">Gravação de Conteúdo Sem Gestão</div>
+        <div class="plano-sub">Produção audiovisual pela agência. Gestão das redes pela clínica.</div>
+        <div class="plano-valor"><sup>R$</sup>1.500</div>
+        <ul class="plano-ul">
+          <li>Visitas quinzenais para gravação</li>
+          <li>Edição dos vídeos produzidos</li>
+          <li>Entrega dos arquivos prontos</li>
+          <li>Alinhamento trimestral de temas</li>
+          <li>Aprovações via WhatsApp</li>
+          <li class="no">Gestão e publicação não inclusa</li>
+          <li class="no">Monitoramento não incluso</li>
+        </ul>
+        <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Tenho+interesse+no+plano+Marketing+180%C2%B0+Conte%C3%BAdo+para+a+Cl%C3%ADnica+Santo+Andr%C3%A9." target="_blank" class="plano-cta">💬 Quero o 180° Conteúdo</a>
+      </div>
+      <div class="plano">
+        <div class="plano-badge">Marketing 180° — Estratégia</div>
+        <div class="plano-nome">Planejamento Sem Execução</div>
+        <div class="plano-sub">A agência entrega o plano e a estratégia. A execução fica com a equipe interna.</div>
+        <div class="plano-valor"><sup>R$</sup>1.000</div>
+        <ul class="plano-ul">
+          <li>Planejamento estratégico trimestral</li>
+          <li>Calendário editorial detalhado</li>
+          <li>Diretrizes de identidade e conteúdo</li>
+          <li>Orientações de legendas e hashtags</li>
+          <li>Portal do cliente para acompanhamento</li>
+          <li class="no">Produção e publicação não inclusa</li>
+          <li class="no">Gravação não inclusa</li>
+        </ul>
+        <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Tenho+interesse+no+plano+Marketing+180%C2%B0+Estrat%C3%A9gia+para+a+Cl%C3%ADnica+Santo+Andr%C3%A9." target="_blank" class="plano-cta">💬 Quero o 180° Estratégia</a>
+      </div>
+    </div>
+
+    <!-- Tráfego pago add-on -->
+    <div class="trafego-box">
+      <div>
+        <h4>+ Tráfego Pago — Instagram e Google</h4>
+        <p>A partir do 3º mês de serviço, disponibilizamos a gestão completa de tráfego pago no Instagram e Google — campanhas de anúncios para ampliar o alcance, gerar consultas e posicionar a clínica nos momentos certos em que os pacientes estão buscando. O valor do investimento em mídia (verba de anúncios) é definido separadamente pela clínica.</p>
+      </div>
+      <div>
+        <div class="trafego-price">+ R$ 1.000<span>a partir do 3º mês</span></div>
+      </div>
+    </div>
+
+    <!-- Nota sobre gestão de conversas -->
+    <div class="nota-box">
+      💬 <strong>Gestão de conversas no Instagram</strong> (comentários e directs) não está inclusa nesta proposta. Porém, é uma demanda que podemos discutir juntos e desenvolver soluções personalizadas para a realidade da clínica.
+    </div>
+  </div>
+</section>
+
+<!-- CALENDÁRIO 6 MESES -->
+<section id="calendario" class="sec">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">07</span><h2 class="sh-t">Proposta de calendário — 6 meses</h2></div>
+    <div class="cal-intro">
+      📌 Este é um calendário sugerido, desenvolvido com base no perfil da Clínica de Olhos Santo André e nas boas práticas de marketing para clínicas de oftalmologia. Os objetivos e ações de cada mês serão refinados após um conhecimento mais aprofundado da clínica, seu público e suas metas específicas.
+    </div>
+    <div class="cal-grid">
+      <div class="cal-card">
+        <div class="cal-mes">Mês 1</div>
+        <div class="cal-titulo">Imersão e produção</div>
+        <ul class="cal-ul">
+          <li>Diagnóstico da presença digital atual</li>
+          <li>Definição de identidade de conteúdo e tom de voz</li>
+          <li>Produção completa do material do mês 2</li>
+          <li>1ª visita de gravação de conteúdo</li>
+          <li>Apresentação da equipe médica da clínica</li>
+        </ul>
+      </div>
+      <div class="cal-card">
+        <div class="cal-mes">Mês 2</div>
+        <div class="cal-titulo">Lançamento da nova presença</div>
+        <ul class="cal-ul">
+          <li>Publicação dos primeiros conteúdos planejados</li>
+          <li>Início da comunicação dos diferenciais da clínica</li>
+          <li>Campanha de conscientização em saúde ocular</li>
+          <li>2ª visita de gravação de conteúdo</li>
+          <li>Produção do material do mês 3 em andamento</li>
+        </ul>
+      </div>
+      <div class="cal-card">
+        <div class="cal-mes">Mês 3</div>
+        <div class="cal-titulo">Autoridade e educação</div>
+        <ul class="cal-ul">
+          <li>Conteúdo educativo sobre doenças oculares comuns</li>
+          <li>Destaque dos procedimentos realizados na clínica</li>
+          <li>Início do tráfego pago (Instagram e Google)</li>
+          <li>3ª visita de gravação + 1ª análise de métricas</li>
+          <li>Reunião trimestral de alinhamento</li>
+        </ul>
+      </div>
+      <div class="cal-card">
+        <div class="cal-mes">Mês 4</div>
+        <div class="cal-titulo">Prova social e confiança</div>
+        <ul class="cal-ul">
+          <li>Conteúdo com depoimentos e casos de sucesso</li>
+          <li>Apresentação do corpo clínico e especialidades</li>
+          <li>Campanhas sazonais (ex: Outubro Rosa — visão feminina)</li>
+          <li>4ª visita de gravação de conteúdo</li>
+          <li>Otimização das campanhas de tráfego pago</li>
+        </ul>
+      </div>
+      <div class="cal-card">
+        <div class="cal-mes">Mês 5</div>
+        <div class="cal-titulo">Conversão e captação</div>
+        <ul class="cal-ul">
+          <li>Campanhas focadas em agendamento de consultas</li>
+          <li>Conteúdo de resposta a dúvidas frequentes</li>
+          <li>Ação de marketing offline com material impresso</li>
+          <li>5ª visita de gravação de conteúdo</li>
+          <li>Análise de métricas e refinamento da estratégia</li>
+        </ul>
+      </div>
+      <div class="cal-card">
+        <div class="cal-mes">Mês 6</div>
+        <div class="cal-titulo">Consolidação e expansão</div>
+        <ul class="cal-ul">
+          <li>Análise completa dos 6 meses com relatório</li>
+          <li>Campanhas de reativação de pacientes inativos</li>
+          <li>Conteúdo de fim de ano e mensagem institucional</li>
+          <li>6ª visita de gravação de conteúdo</li>
+          <li>Planejamento estratégico para o próximo semestre</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <div>
+      <h2 class="cta-h">PRONTO PARA<br><em>COMEÇAR?</em></h2>
+      <p class="cta-p">Escolha o plano que melhor se encaixa na realidade da clínica e me chame no WhatsApp para alinhar os próximos passos.</p>
+    </div>
+    <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Vi+a+proposta+e+quero+conversar+sobre+o+marketing+da+Cl%C3%ADnica+de+Olhos+Santo+Andr%C3%A9." target="_blank" class="cta-btn">💬 Falar pelo WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-logo"><span>Agência</span> Ângelo</div>
+  <div class="ft-info">Adson Ângelo · contato@agenciaangelo.com.br<br>Proposta válida por 15 dias · Junho 2026</div>
+</footer>
+
+</body>
+</html>
