@@ -64,6 +64,20 @@
   .ciclo-item h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 5px; }
   .ciclo-item p { font-size: 13.5px; color: var(--ts); line-height: 1.7; font-weight: 300; }
 
+
+  /* ESTRUTURA DA AGÊNCIA */
+  .estrutura-intro { font-size: 15px; font-weight: 300; color: var(--ts); max-width: 700px; line-height: 1.85; margin-bottom: 36px; }
+  .estrutura-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .estrutura-card { background: var(--dark4); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 24px 22px; position: relative; overflow: hidden; }
+  .estrutura-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(232,96,26,0.75); }
+  .estrutura-icon { width: 42px; height: 42px; border-radius: 50%; background: rgba(232,96,26,0.1); border: 1px solid rgba(232,96,26,0.24); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
+  .estrutura-card h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; line-height: 1.1; }
+  .estrutura-card p { font-size: 13px; color: var(--ts); line-height: 1.65; font-weight: 300; }
+  .estrutura-modelo { margin-top: 24px; background: rgba(232,96,26,0.06); border: 1px solid rgba(232,96,26,0.16); border-radius: 12px; padding: 24px 28px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; }
+  .estrutura-modelo-icon { font-size: 28px; line-height: 1; }
+  .estrutura-modelo h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
+  .estrutura-modelo p { font-size: 13.5px; color: var(--ts); line-height: 1.7; font-weight: 300; }
+
   /* FLUXO */
   .fluxo { display: flex; flex-direction: column; position: relative; }
   .fluxo::before { content: ''; position: absolute; left: 19px; top: 20px; bottom: 20px; width: 1px; background: rgba(232,96,26,0.2); }
@@ -185,8 +199,8 @@
   @media (max-width: 900px) {
     nav { padding: 0 24px; } .nav-links { display: none; }
     .hero, .sec, .cta-sec { padding: 80px 24px 60px; } .hero { padding-top: 100px; }
-    .planos-grid, .port-grid, .ciclo-wrap, .port-lp-grid, .portal-grid, .plat-grid, .cal-grid { grid-template-columns: 1fr; }
-    .cta-inner, .trafego-box { grid-template-columns: 1fr; gap: 28px; }
+    .planos-grid, .port-grid, .ciclo-wrap, .port-lp-grid, .portal-grid, .plat-grid, .cal-grid, .estrutura-grid { grid-template-columns: 1fr; }
+    .cta-inner, .trafego-box, .estrutura-modelo { grid-template-columns: 1fr; gap: 20px; }
     .hero-meta { gap: 20px; } .hm { border-right: none; margin-right: 0; padding-right: 0; }
     footer { padding: 28px 24px; } .ft-info { text-align: left; }
   }
@@ -198,6 +212,7 @@
   <a href="#" class="nav-logo"><span>Agência</span> Ângelo</a>
   <ul class="nav-links">
     <li><a href="#agencia">A Agência</a></li>
+    <li><a href="#estrutura">Estrutura</a></li>
     <li><a href="#fluxo">Fluxo</a></li>
     <li><a href="#ciclo">Marketing</a></li>
     <li><a href="#portfolio">Portfólio</a></li>
@@ -238,10 +253,65 @@
 
 
 
+<!-- ESTRUTURA DA AGÊNCIA -->
+<section id="estrutura" class="sec">
+  <div class="sec-inner">
+    <div class="sh"><span class="sh-n">02</span><h2 class="sh-t">Estrutura da agência</h2></div>
+    <p class="estrutura-intro">A Agência Ângelo trabalha com uma estrutura organizada por áreas, permitindo que cada etapa da estratégia seja conduzida por profissionais específicos. Esse modelo garante mais qualidade, velocidade e profundidade na entrega dos materiais da clínica.</p>
+
+    <div class="estrutura-grid">
+      <div class="estrutura-card">
+        <div class="estrutura-icon">🧭</div>
+        <h4>Planejamento e estratégia</h4>
+        <p>Área responsável por definir objetivos, organizar campanhas, construir o plano de ação e manter cada entrega conectada ao posicionamento e às metas da clínica.</p>
+      </div>
+
+      <div class="estrutura-card">
+        <div class="estrutura-icon">✍️</div>
+        <h4>Redação</h4>
+        <p>Desenvolvimento de textos, legendas, roteiros e mensagens com linguagem adequada ao público, ao segmento da saúde e às normas de comunicação médica.</p>
+      </div>
+
+      <div class="estrutura-card">
+        <div class="estrutura-icon">🎨</div>
+        <h4>Design</h4>
+        <p>Criação das peças visuais para redes sociais, campanhas, materiais institucionais e ações offline, mantendo padrão estético e coerência de marca.</p>
+      </div>
+
+      <div class="estrutura-card">
+        <div class="estrutura-icon">📈</div>
+        <h4>Tráfego pago</h4>
+        <p>Gestão estratégica de campanhas no Instagram e Google, com foco em alcance qualificado, geração de demanda e análise contínua dos resultados.</p>
+      </div>
+
+      <div class="estrutura-card">
+        <div class="estrutura-icon">🎥</div>
+        <h4>Audiovisual</h4>
+        <p>Produção de vídeos com equipamentos profissionais para gravação e edição. A proposta não prevê gravações feitas com celular, reforçando o padrão técnico das entregas.</p>
+      </div>
+
+      <div class="estrutura-card">
+        <div class="estrutura-icon">⚙️</div>
+        <h4>Operação integrada</h4>
+        <p>As áreas trabalham de forma conectada para transformar planejamento em conteúdo, campanha e acompanhamento, reduzindo improvisos e aumentando a previsibilidade.</p>
+      </div>
+    </div>
+
+    <div class="estrutura-modelo">
+      <div class="estrutura-modelo-icon">👥</div>
+      <div>
+        <h4>Equipe fixa + profissionais sob demanda</h4>
+        <p>Nossa equipe funciona com profissionais fixos e profissionais acionados sob demanda, conforme a necessidade de cada projeto. Esse formato permite manter uma estrutura eficiente no dia a dia e, ao mesmo tempo, ampliar capacidade técnica quando o cliente ou a campanha exige uma entrega mais específica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- FLUXO DE TRABALHO -->
 <section id="fluxo" class="sec">
   <div class="sec-inner">
-    <div class="sh"><span class="sh-n">02</span><h2 class="sh-t">Como trabalhamos</h2></div>
+    <div class="sh"><span class="sh-n">03</span><h2 class="sh-t">Como trabalhamos</h2></div>
     <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:640px;line-height:1.85;margin-bottom:44px;">Na área médica, o planejamento é o alicerce de tudo. Trabalhamos com um planejamento mínimo de 3 meses, integrando marketing digital e offline, com total transparência no acompanhamento de cada entrega.</p>
 
     <div class="fluxo">
@@ -324,7 +394,7 @@
 <!-- CICLO DE MARKETING -->
 <section id="ciclo" class="sec sec-mid">
   <div class="sec-inner">
-    <div class="sh"><span class="sh-n">03</span><h2 class="sh-t">O ciclo de marketing</h2></div>
+    <div class="sh"><span class="sh-n">04</span><h2 class="sh-t">O ciclo de marketing</h2></div>
     <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:640px;line-height:1.85;margin-bottom:48px;">Todo o trabalho é estruturado em torno de um ciclo contínuo — planejamento, execução e monitoramento — que garante que as ações estejam sempre alinhadas aos objetivos da clínica e que os resultados sejam medidos e melhorados a cada ciclo.</p>
     <div class="ciclo-wrap">
       <div class="ciclo-svg-wrap">
@@ -363,7 +433,7 @@
 <!-- PORTFÓLIO MÉDICO -->
 <section id="portfolio" class="sec">
   <div class="sec-inner">
-    <div class="sh"><span class="sh-n">04</span><h2 class="sh-t">Clientes na área médica</h2></div>
+    <div class="sh"><span class="sh-n">05</span><h2 class="sh-t">Clientes na área médica</h2></div>
     <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:680px;line-height:1.85;margin-bottom:40px;">A Agência Ângelo já atuou com profissionais e clínicas da área da saúde em diferentes momentos de marca: início de presença digital, lançamento de clínicas, inaugurações, fortalecimento de autoridade e comunicação médica com linguagem ética, estratégica e profissional.</p>
 
     <div class="port-grid">
@@ -439,7 +509,7 @@
 <!-- CLIENTES EM GERAL -->
 <section id="clientes" class="sec sec-dark3">
   <div class="sec-inner">
-    <div class="sh"><span class="sh-n">05</span><h2 class="sh-t">Quem já confia na agência</h2></div>
+    <div class="sh"><span class="sh-n">06</span><h2 class="sh-t">Quem já confia na agência</h2></div>
     <p style="font-size:15px;font-weight:300;color:var(--ts);max-width:640px;line-height:1.85;margin-bottom:32px;">Empresas e profissionais de diferentes segmentos que já têm a Agência Ângelo como parceira de marketing.</p>
     <div class="logos-wrap">
       <p class="logos-label">Clientes Agência Ângelo</p>
@@ -453,7 +523,7 @@
 <!-- PLANOS -->
 <section id="planos" class="sec">
   <div class="sec-inner">
-    <div class="sh"><span class="sh-n">06</span><h2 class="sh-t">Planos e investimento</h2></div>
+    <div class="sh"><span class="sh-n">07</span><h2 class="sh-t">Planos e investimento</h2></div>
 
     <!-- Plataformas trabalhadas -->
     <p style="font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px;">Plataformas trabalhadas</p>
@@ -481,7 +551,7 @@
         <div class="plano-nome">Planejamento<br>+ Execução<br>+ Monitoramento</div>
         <div class="plano-sub">Gestão completa — do estratégico ao operacional, digital e offline.</div>
         <div class="plano-valor"><sup>R$</sup>2.000</div>
-        <div class="plano-ciclo">por mês · contrato mensal</div>
+        <div class="plano-ciclo">por mês</div>
         <ul class="plano-ul">
           <li>Reunião trimestral de planejamento</li>
           <li>Plano de ação semanal</li>
@@ -499,7 +569,7 @@
         <div class="plano-nome">Gravação de<br>Conteúdo<br>Sem Gestão</div>
         <div class="plano-sub">Produção audiovisual pela agência. Gestão das redes pela clínica.</div>
         <div class="plano-valor"><sup>R$</sup>1.500</div>
-        <div class="plano-ciclo">por mês · contrato mensal</div>
+        <div class="plano-ciclo">por mês</div>
         <ul class="plano-ul">
           <li>Gravação de conteúdo para o feed</li>
           <li>Edição dos vídeos produzidos</li>
@@ -508,6 +578,7 @@
           <li>Aprovações via WhatsApp</li>
           <li class="no">Gestão e publicação não inclusa</li>
           <li class="no">Monitoramento não incluso</li>
+          <li class="no">Campanhas digitais e offline não inclusas</li>
         </ul>
         <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Tenho+interesse+no+plano+Marketing+180%C2%B0+Conte%C3%BAdo+%28R%24+1.500%2Fm%C3%AAs%29+para+a+Cl%C3%ADnica+Santo+Andr%C3%A9." target="_blank" class="plano-cta">💬 Quero o 180° Conteúdo</a>
       </div>
@@ -516,7 +587,7 @@
         <div class="plano-nome">Planejamento<br>Sem<br>Execução</div>
         <div class="plano-sub">A agência entrega o plano e a estratégia. A execução fica com a equipe interna.</div>
         <div class="plano-valor"><sup>R$</sup>1.000</div>
-        <div class="plano-ciclo">por mês · contrato mensal</div>
+        <div class="plano-ciclo">por mês</div>
         <ul class="plano-ul">
           <li>Planejamento estratégico trimestral</li>
           <li>Calendário editorial detalhado</li>
@@ -525,6 +596,7 @@
           <li>Portal do cliente para acompanhamento</li>
           <li class="no">Produção e publicação não inclusa</li>
           <li class="no">Gravação não inclusa</li>
+          <li class="no">Monitoramento não incluso</li>
         </ul>
         <a href="https://wa.me/5584991236489?text=Ol%C3%A1%2C+Adson%21+Tenho+interesse+no+plano+Marketing+180%C2%B0+Estrat%C3%A9gia+%28R%24+1.000%2Fm%C3%AAs%29+para+a+Cl%C3%ADnica+Santo+Andr%C3%A9." target="_blank" class="plano-cta">💬 Quero o 180° Estratégia</a>
       </div>
@@ -554,7 +626,7 @@
 <!-- CALENDÁRIO 6 MESES -->
 <section id="calendario" class="sec">
   <div class="sec-inner">
-    <div class="sh"><span class="sh-n">07</span><h2 class="sh-t">Proposta de calendário — 6 meses</h2></div>
+    <div class="sh"><span class="sh-n">08</span><h2 class="sh-t">Proposta de calendário — 6 meses</h2></div>
     <div class="cal-intro">
       📌 Este é um calendário sugerido, desenvolvido com base no perfil da Clínica de Olhos Santo André e nas boas práticas de marketing para clínicas de oftalmologia. Os objetivos e ações de cada mês serão refinados após um conhecimento mais aprofundado da clínica, seu público e suas metas específicas.
     </div>
